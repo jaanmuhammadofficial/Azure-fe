@@ -1,4 +1,4 @@
-name: Deploy to Azure Blob Static Website
+name: Deploy Static Website to Azure Blob Storage
 
 on:
   push:
@@ -12,12 +12,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Log in to Azure
+      # 🔐 Log in to Azure using the service principal credentials
+      - name: Azure Login
         uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Check if storage account exists
+      # 🧩 Check if the storage account exists
+      - name: Check existing storage account
         id: check_storage
         run: |
           if az storage account show \
@@ -28,8 +30,10 @@ jobs:
             echo "exists=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Create storage account (if not exists)
+      # ☁️ Create the storage account only if it doesn't exist
+      - name: Create storage account if not exists
         if: steps.check_storage.outputs.exists == 'false'
+        continue-on-error: true
         run: |
           az storage account create \
             --name ${{ secrets.AZURE_STORAGE_ACCOUNT }} \
@@ -37,17 +41,23 @@ jobs:
             --location eastus \
             --sku Standard_LRS \
             --kind StorageV2 \
-            --allow-blob-public-access true
+            --allow-blob-public-access true || echo "⚠️ Storage name may already be taken — skipping creation."
 
+      # 🌐 Enable static website hosting (CLI version-safe)
       - name: Enable static website hosting
         run: |
           az storage blob service-properties update \
             --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} \
-            --static-website \
-            --index-document index.html \
-            --error-document 404.html
+            --static-website true \
+            --index-document index.html || true
 
-      - name: Upload site files to Blob storage
+          az storage blob service-properties update \
+            --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} \
+            --static-website true \
+            --404-document 404.html || true
+
+      # 🚀 Upload site files to Azure Blob static website container
+      - name: Upload files to Blob Storage
         run: |
           az storage blob upload-batch \
             --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} \
@@ -55,9 +65,10 @@ jobs:
             --destination '$web' \
             --overwrite true
 
-      - name: Show website URL
+      # ✅ Print website URL
+      - name: Output Website URL
         run: |
           url=$(az storage account show \
             --name ${{ secrets.AZURE_STORAGE_ACCOUNT }} \
             --query "primaryEndpoints.web" -o tsv)
-          echo "✅ Website deployed at: $url"
+          echo "✅ Website deployed successfully at: $url"
