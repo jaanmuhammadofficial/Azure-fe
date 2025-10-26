@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jaan Muhammad — DevOps Engineer</title>
+  <style>
+    :root{
+      --accent:#0b7dda;
+      --muted:#666;
+      --card:#fff;
+      --bg:#f5f7fb;
+      --maxw:900px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    body{background:var(--bg);margin:0;padding:32px;display:flex;justify-content:center;}
+    .container{max-width:var(--maxw);width:100%;background:var(--card);border-radius:12px;box-shadow:0 8px 24px rgba(12,24,40,0.08);overflow:hidden;}
+    header{display:flex;gap:20px;padding:28px 32px;border-bottom:1px solid #eef2f6;align-items:center}
+    .photo{flex:0 0 96px;height:96px;border-radius:12px;background:#ddd;display:flex;align-items:center;justify-content:center;color:#888;font-weight:600}
+    .head-info h1{margin:0;font-size:1.4rem}
+    .head-info p{margin:6px 0 0;color:var(--muted);font-size:0.95rem}
+    .main{display:flex;flex-wrap:wrap;padding:24px;gap:24px}
+    .left{flex:1 1 320px;min-width:260px}
+    .right{flex:2 1 480px;min-width:300px}
+    h2{font-size:1rem;margin:0 0 10px;color:var(--accent)}
+    .card{background:#fbfdff;border:1px solid #f0f4f9;padding:14px;border-radius:10px;margin-bottom:14px}
+    ul{margin:0;padding-left:18px}
+    .meta{font-size:0.9rem;color:var(--muted);line-height:1.5}
+    .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .project{margin-bottom:12px}
+    footer{padding:18px 32px;border-top:1px solid #eef2f6;color:var(--muted);font-size:0.9rem}
+    a{color:var(--accent);text-decoration:none}
+    @media (max-width:700px){header{flex-direction:column;align-items:flex-start}.main{padding:16px}}
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header>
+      <div class="photo" aria-hidden="true">Photo</div>
+      <div class="head-info">
+        <h1>Jaan Muhammad</h1>
+        <p class="meta">DevOps Engineer · BS Computer Science · Islamabad, Pakistan</p>
+        <p class="meta">Email: <a href="mailto:jaanmuhammadofficial1@gmail.com">jaanmuhammadofficial1@gmail.com</a> · Phone: +92 302 7616166</p>
+        <p class="meta">LinkedIn: <a href="https://www.linkedin.com/in/jaan-muhammad-mehar-03230438a/">linkedin.com/in/jaan-muhammad-mehar</a> · GitHub: <a href="https://github.com/jaanmuhammadofficial">github.com/jaanmuhammadofficial</a></p>
+      </div>
+    </header>
+
+    <section class="main">
+      <aside class="left">
+        <div class="card">
+          <h2>About Me</h2>
+          <p class="meta">Highly motivated and detail-oriented DevOps Engineer with hands-on experience in building scalable, automated, and monitored cloud environments. Skilled in AWS, Docker, Linux, CI/CD, Terraform, and Prometheus-Grafana monitoring. Passionate about automation and delivering reliable infrastructure.</p>
+        </div>
+
+        <div class="card">
+          <h2>Technical Skills</h2>
+          <div class="skills-grid">
+            <div class="meta">
+              <strong>Cloud &amp; Infra</strong><br>AWS, Azure
+            </div>
+            <div class="meta">
+              <strong>Containers</strong><br>Docker
+            </div>
+            <div class="meta">
+              <strong>Web &amp; Network</strong><br>Nginx, DNS
+            </div>
+            <div class="meta">
+              <strong>Automation</strong><br>Bash, Cron, Terraform, Ansible
+            </div>
+            <div class="meta">
+              <strong>Monitoring</strong><br>Prometheus, Grafana, Node Exporter, cAdvisor
+            </div>
+            <div class="meta">
+              <strong>CI/CD</strong><br>GitHub Actions, GitLab CI/CD
+            </div>
+            <div class="meta">
+              <strong>OS</strong><br>Linux (Ubuntu), Windows
+            </div>
+            <div class="meta">
+              <strong>VCS</strong><br>Git, GitHub, GitLab
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Soft Skills</h2>
+          <ul class="meta">
+            <li>Problem-solving &amp; analytical mindset</li>
+            <li>Teamwork &amp; collaboration</li>
+            <li>Reliability, scalability &amp; automation focus</li>
+            <li>Eager to learn new tools &amp; technologies</li>
+            <li>Attention to detail · Leadership · Communication</li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="right">
+        <div class="card">
+          <h2>Work Experience</h2>
+          <div class="project">
+            <strong>DevOps Intern — Adan Institute of Technology, Islamabad</strong><br>
+            <span class="meta">08/2025 – Current</span>
+            <ul>
+              <li>Assisted in building CI/CD pipelines (GitHub Actions, Jenkins) and Docker deployments.</li>
+              <li>Configured and managed AWS/Azure resources and automated tasks via shell/Python scripts.</li>
+              <li>Worked with Terraform for infrastructure provisioning and monitored systems using Grafana/Prometheus.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <strong>Amazon Virtual Assistant — Hyper Future (Self-employed)</strong><br>
+            <span class="meta">01/2024 – 11/2024</span>
+            <ul>
+              <li>Managed Amazon seller accounts, product listings, keyword optimization and inventory management.</li>
+              <li>Handled customer support, order processing, and performance analysis to improve store visibility.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <strong>E-Commerce Virtual Assistant — Self-employed (AliExpress)</strong><br>
+            <span class="meta">06/2023 – 01/2024</span>
+            <ul>
+              <li>Handled product research, listing creation, order management, and customer communication.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <strong>Flutter Developer — Devicon</strong><br>
+            <span class="meta">06/2022 – 01/2023</span>
+            <ul>
+              <li>Developed UI for Weather App, Tutor App (Final Year Project) and Real Estate App focusing on responsive and engaging UI components.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Projects</h2>
+          <div class="project">
+            <strong>Serverless Web Application on AWS</strong>
+            <p class="meta">Built a serverless app using AWS Lambda, API Gateway, DynamoDB; hosted on S3 + CloudFront with Terraform &amp; CI/CD (GitHub Actions).</p>
+          </div>
+          <div class="project">
+            <strong>Dockerized Tour Web App</strong>
+            <p class="meta">Containerized a Tour Management app using Docker and automated builds/deploys with GitHub Actions.</p>
+          </div>
+          <div class="project">
+            <strong>Tutor App (Final Year Project)</strong>
+            <p class="meta">Developed the UI of a cross-platform Tutor App (Online Academy) using Flutter; focused on student–tutor matching, profile &amp; course browsing UIs.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Education</h2>
+          <p class="meta"><strong>BS Computer Science</strong><br>Khawaja Fareed University of Engineering &amp; IT — Rahim Yar Khan (2018–2022) — Final grade: B</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>Ready to contribute to DevOps teams with a focus on automation, CI/CD and cloud infrastructure.</div>
+      <div style="margin-top:8px">Last updated: <!-- dynamic today --> <span id="today"></span></div>
+    </footer>
+  </div>
+
+  <script>document.getElementById('today').textContent = new Date().toLocaleDateString();</script>
+</body>
+</html>
